@@ -1,0 +1,23 @@
+ALGORITHM DotProduct
+INPUT: Two vectors V1 and V2 of size k
+OUTPUT: Scalar ps representing the dot product of V1 and V2
+BEGIN
+    ps ← 0
+    For i from 1 to k do
+        ps ← ps + V1[i] * V2[i]
+    EndFor
+END
+
+ALGORITHM CheckOrthogonality
+INPUT: Two arrays V1 and V2 each containing n vectors of size k
+OUTPUT: For each pair of vectors, print whether they are orthogonal
+BEGIN
+    For i from 1 to n do
+        Call DotProduct(V1[i], V2[i], ps)
+        If ps = 0 then
+            Print "Vectors", i, "are orthogonal"
+        Else
+            Print "Vectors", i, "are not orthogonal"
+        EndIf
+    EndFor
+END

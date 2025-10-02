@@ -1,0 +1,27 @@
+ALGORITHM SumDistinctElements
+BEGIN
+    INPUT: Two arrays A and B of sizes m and n respectively
+    sum ← 0
+
+    For i from 1 to m do
+        found ← false
+        For j from 1 to n do
+            If A[i] = B[j] then
+                found ← true
+        EndFor
+        If found = false then
+            sum ← sum + A[i]
+    EndFor
+
+    For i from 1 to n do
+        found ← false
+        For j from 1 to m do
+            If B[i] = A[j] then
+                found ← true
+        EndFor
+        If found = false then
+            sum ← sum + B[i]
+    EndFor
+
+    Print "Sum of distinct elements is", sum
+END
